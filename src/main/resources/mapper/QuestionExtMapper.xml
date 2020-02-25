@@ -12,16 +12,22 @@
     <result column="LIKE_COUNT" jdbcType="INTEGER" property="likeCount" />
     <result column="TAG" jdbcType="VARCHAR" property="tag" />
   </resultMap>
+
   <update id="incView" parameterType="life.majiang.community.model.Question">
     update QUESTION
     set
     VIEW_COUNT = VIEW_COUNT + #{viewCount, jdbcType=INTEGER}
     where ID = #{id, jdbcType=INTEGER}
   </update>
+
   <update id="incCommentCount" parameterType="life.majiang.community.model.Question">
     update QUESTION
     set
     COMMENT_COUNT = COMMENT_COUNT + #{commentCount, jdbcType=INTEGER}
     where ID = #{id, jdbcType=INTEGER}
   </update>
+
+  <select id="selectRelated" parameterType="life.majiang.community.model.Question" resultMap="BaseResultMap">
+    select * from  QUESTION where id != #{id, jdbcType=INTEGER} and tag regexp #{tag, jdbcType=VARCHAR}
+  </select>
 </mapper>

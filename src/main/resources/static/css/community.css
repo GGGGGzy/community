@@ -32,7 +32,7 @@ body {
 }
 
 .community-menu {
-    display: block;
+    display: inline-block;
     color: #999;
     font-size: 13px;
     margin-bottom: 15px;
@@ -57,11 +57,15 @@ body {
     cursor: pointer;
 }
 
+.menu .active {
+    color: #499ef3;
+}
+
 .menu .icon:hover {
     color: #499ef3;
 }
 
-#comments {
+.comments {
     padding-bottom: 5px;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
@@ -69,4 +73,41 @@ body {
 
 .question-title {
     margin-top: 25px;
+}
+
+.question-tag {
+    margin-right: 5px;
+}
+
+.question-related {
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.quesiton-wechat {
+    width: 50%;
+}
+
+.sub-comment {
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.sub-comment .btn {
+    margin: 10px 0;
+}
+
+.menu .comment-icon {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu .comment-icon:hover {
+    color: #499ef3;
 }
